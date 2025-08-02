@@ -912,7 +912,7 @@ async function main() {
     const camX = currentViewInverse[12];
     const camY = currentViewInverse[13];
     const camZ = currentViewInverse[14];
-    if (prev_cam_pos[0] != camX && prev_cam_pos[1] != camY && prev_cam_pos[2] != camZ) {
+    if (Math.round(prev_cam_pos[0]) != Math.round(camX) && Math.round(prev_cam_pos[1]) != Math.round(camY) && Math.round(prev_cam_pos[2]) != Math.round(camZ)) {
       console.log("Prev cam position:", prev_cam_pos);
       console.log("Camera Position:", [camX, camY, camZ]);
       viewMatrix = getViewMatrix(camera)
