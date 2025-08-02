@@ -915,7 +915,7 @@ async function main() {
       console.log("Prev cam position:", prev_cam_pos);
       console.log("Camera Position:", [camX, camY, camZ]);
       viewMatrix = getViewMatrix(camera)
-      
+      prev_cam_pos = [camX, camY, camZ]
     }
     requestAnimationFrame(frame);
   };
