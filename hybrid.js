@@ -906,12 +906,17 @@ async function main() {
     fps.innerText = Math.round(avgFps) + " fps";
     lastFrame = now;
 
+    prev_cam_pos = camera.position
     const currentViewInverse = invert4(viewMatrix);
     const camX = currentViewInverse[12];
     const camY = currentViewInverse[13];
     const camZ = currentViewInverse[14];
-    console.log("Camera Position:", [camX, camY, camZ]);
-    viewMatrix = getViewMatrix(camera)
+    if (prev_cam_pos[0] != camX && prev_cam_pos[1] != camY && prev_cam_pos[2] != camZ) {
+      console.log("Prev cam position:", prev_cam_pos);
+      console.log("Camera Position:", [camX, camY, camZ]);
+      viewMatrix = getViewMatrix(camera)
+      
+    }
     requestAnimationFrame(frame);
   };
 
