@@ -15,9 +15,8 @@ let cameras = [
   },
 ];
 
-let prev_cam_pos = camera.position;
-
 let camera = cameras[0];
+let prev_cam_pos = camera.position;
 
 function createWorker(self) {
   let vertexCount = 0;
