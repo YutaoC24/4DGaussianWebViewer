@@ -15,6 +15,8 @@ let cameras = [
   },
 ];
 
+let prev_cam_pos = camera.position;
+
 let camera = cameras[0];
 
 function createWorker(self) {
@@ -906,7 +908,6 @@ async function main() {
     fps.innerText = Math.round(avgFps) + " fps";
     lastFrame = now;
 
-    prev_cam_pos = camera.position
     const currentViewInverse = invert4(viewMatrix);
     const camX = currentViewInverse[12];
     const camY = currentViewInverse[13];
