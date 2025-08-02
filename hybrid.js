@@ -905,6 +905,12 @@ async function main() {
     }
     fps.innerText = Math.round(avgFps) + " fps";
     lastFrame = now;
+
+    const currentViewInverse = invert4(viewMatrix);
+    const camX = currentViewInverse[12];
+    const camY = currentViewInverse[13];
+    const camZ = currentViewInverse[14];
+    console.log("Camera Position:", [camX, camY, camZ]);
     requestAnimationFrame(frame);
   };
 
