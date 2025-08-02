@@ -911,6 +911,7 @@ async function main() {
     const camY = currentViewInverse[13];
     const camZ = currentViewInverse[14];
     console.log("Camera Position:", [camX, camY, camZ]);
+    viewMatrix = getViewMatrix(camera)
     requestAnimationFrame(frame);
   };
 
