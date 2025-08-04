@@ -17,6 +17,7 @@ let cameras = [
 
 let camera = cameras[0];
 let prev_cam_pos = camera.position;
+let n = 0;
 
 function createWorker(self) {
   let vertexCount = 0;
@@ -911,7 +912,6 @@ async function main() {
     const camX = currentViewInverse[12];
     const camY = currentViewInverse[13];
     const camZ = currentViewInverse[14];
-    n = 0
     if (n != 10) {
     //if (Math.round(prev_cam_pos[0]) != Math.round(camX) && Math.round(prev_cam_pos[1]) != Math.round(camY) && Math.round(prev_cam_pos[2]) != Math.round(camZ)) {
       console.log("Prev cam position:", prev_cam_pos);
