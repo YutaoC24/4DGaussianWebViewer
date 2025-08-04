@@ -916,6 +916,23 @@ async function main() {
     //if (Math.round(prev_cam_pos[0]) != Math.round(camX) && Math.round(prev_cam_pos[1]) != Math.round(camY) && Math.round(prev_cam_pos[2]) != Math.round(camZ)) {
       console.log("Prev cam position:", prev_cam_pos);
       console.log("Camera Position:", [camX, camY, camZ]);
+      let cameras = [
+        {
+          id: 0,
+          img_name: "00001",
+          width: 518,
+          height: 294,
+          position: [-100, -100, 0],
+          rotation: [
+            [0.876134201218856, 0.06925962026449776, 0.47706599800804744],
+            [-0.04747421839895102, 0.9972110940209488, -0.057586739349882114],
+            [-0.4797239414934443, 0.027805376500959853, 0.8769787916452908],
+          ],
+          fy: 259,
+          fx: 147,
+        },
+      ];
+      camera = cameras[0];
       viewMatrix = getViewMatrix(camera)
       prev_cam_pos = [camX, camY, camZ]
       n += 1
