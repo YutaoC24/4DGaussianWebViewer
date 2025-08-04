@@ -911,11 +911,14 @@ async function main() {
     const camX = currentViewInverse[12];
     const camY = currentViewInverse[13];
     const camZ = currentViewInverse[14];
-    if (Math.round(prev_cam_pos[0]) != Math.round(camX) && Math.round(prev_cam_pos[1]) != Math.round(camY) && Math.round(prev_cam_pos[2]) != Math.round(camZ)) {
+    n = 0
+    if (n != 10) {
+    //if (Math.round(prev_cam_pos[0]) != Math.round(camX) && Math.round(prev_cam_pos[1]) != Math.round(camY) && Math.round(prev_cam_pos[2]) != Math.round(camZ)) {
       console.log("Prev cam position:", prev_cam_pos);
       console.log("Camera Position:", [camX, camY, camZ]);
       viewMatrix = getViewMatrix(camera)
       prev_cam_pos = [camX, camY, camZ]
+      n += 1
     }
     requestAnimationFrame(frame);
   };
